@@ -1,5 +1,6 @@
 import Avatar from "../avatar";
 import Tweets from "../tweets";
+import UserNameProfile from "./user-name-profile";
 
 function UserInfosProfile() {
   return (
@@ -8,6 +9,9 @@ function UserInfosProfile() {
         <div className="profile-avatar">
           <Avatar />
         </div>
+      </div>
+      <div className="user-name-profile">
+        <UserNameProfile />
       </div>
       <Tweets />
     </>

@@ -262,6 +262,7 @@ nav .logo-twitter:hover {
 .avatar-sidebar {
   display: flex;
 }
+
 .avatar-sidebar img {
   max-width: 25px;
   max-height: 20px;
@@ -404,4 +405,8 @@ a {
   position: absolute;
   top: 11rem;
   left: 2rem;
+}
+
+.user-name-profile {
+  padding: 60px 30px;
 }
