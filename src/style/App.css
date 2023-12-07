@@ -5,6 +5,7 @@ body {
   color: white;
   margin: 0 auto;
   max-width: 1800px;
+  font-family: "Inter", sans-serif;
 }
 
 #root {
