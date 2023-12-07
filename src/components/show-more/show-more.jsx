@@ -1,4 +1,4 @@
-function ShowMore() {
+function ShowMore({ handleClick }) {
   return (
     <>
       <div>

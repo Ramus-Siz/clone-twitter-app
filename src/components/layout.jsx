@@ -9,9 +9,9 @@ function Layout() {
       <div className="left-sidebar">
         <SideBar />
       </div>
-      <div>
-        <Outlet />
-      </div>
+
+      <Outlet />
+
       <div className="right-sidebar">
         <Trends />
       </div>
