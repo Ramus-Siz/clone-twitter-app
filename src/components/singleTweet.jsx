@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TweetActions from "./tweet-actions";
 
 export default function SingleTweet({ value }) {
@@ -5,7 +6,9 @@ export default function SingleTweet({ value }) {
     <>
       <div className="tweet" key={value.id}>
         <div className="tweet-avatar">
-          <img src={value.userImageProfil} alt="" />
+          <Link to={`/profile/${value.username}`}>
+            <img src={value.userImageProfil} alt="" />
+          </Link>
         </div>
         <div className="tweet-content">
           <div className="tweet-body">

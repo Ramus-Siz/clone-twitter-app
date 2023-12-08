@@ -368,6 +368,11 @@ a {
   gap: 15px;
 }
 
+.inline-profile-img-and-user-infos img:first-child {
+  border-radius: 50%;
+  max-width: 50px;
+}
+
 .toFollow .tweet-title-author {
   color: #d9d9d9;
   font-size: 13px;

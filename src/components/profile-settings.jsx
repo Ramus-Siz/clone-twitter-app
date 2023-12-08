@@ -6,9 +6,9 @@ function ProfileSettings() {
     <>
       <div className="profile-settings">
         <div className="avatar-profile-photo">
-          <TweetAvatar />
+          <TweetAvatar avatarImg="src\images\profile-photo.png" />
         </div>
-        <UserNameProfile />
+        <UserNameProfile user="Bradley Ortiz" username="@bradley..." />
         <img
           src="src\images\Icons\More-2.png"
           alt=""

@@ -1,8 +1,10 @@
+import cnnProfileImage from "../images/tweet-profile-photo.png";
+import nytimeProfileImage from "../images/profil-ny.png";
 export const listOfTweets = [
   {
     tweetTitle: "CNN",
     username: "@CNN",
-    userImageProfil: "src/images/Icons/tweet-profile-photo.png",
+    userImageProfil: cnnProfileImage,
     userTweet:
       "President Joe Biden touted a new agreement reached with the European Union to ease Trump-era tariffs on aluminum and steel as a major breakthrough that would serve to both strengthen the US steel industry and combat the global climate crisis.",
     tweetImage: "",
@@ -16,7 +18,7 @@ export const listOfTweets = [
   {
     tweetTitle: "The New York Times",
     username: "@nytimes",
-    userImageProfil: "src/images/profil-ny.png",
+    userImageProfil: nytimeProfileImage,
     userTweet:
       "Gardening boomed during the pandemic. Six Black writers share how it has helped them re-establish, and reimagine, a connection to cultivation and the land",
     tweetImage: "src/images/tweet-image.png",
