@@ -10,7 +10,7 @@ function Home({ title }) {
     <main className="timeline">
       <Header title={"Home"} />
       <div className="tweet-editor">
-        <TweetAvatar />
+        <TweetAvatar avatarImg="src/images/profile-photo.png" />
         <div className="tweet-editor-form">
           <TweetEditorForm />
           <div className="tweet-editor-buttons">

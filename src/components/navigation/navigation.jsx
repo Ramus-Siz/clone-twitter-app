@@ -70,7 +70,7 @@ function Navigation() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/profile/@CNN">
+          <NavLink to="/profile/@Bradley...">
             <div className="inline-navigate-sidebar">
               <img src="src\images\Icons\Profile.png" alt="" />
               {/* <img src="src\images\Icons\Profile-Fill.png" alt="" /> */}

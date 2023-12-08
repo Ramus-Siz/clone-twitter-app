@@ -1,5 +1,7 @@
 import cnnProfileImage from "../images/tweet-profile-photo.png";
 import nytimeProfileImage from "../images/profil-ny.png";
+import bradleyProfileImage from "../images/profile-photo.png";
+import tweeterProfileImage from "../images/profil-tweeter.png";
 export const listOfTweets = [
   {
     tweetTitle: "CNN",
@@ -32,7 +34,7 @@ export const listOfTweets = [
   {
     tweetTitle: "Tweeter",
     username: "@Tweeter",
-    userImageProfil: "src/images/profil-tweeter.png",
+    userImageProfil: "tweeterProfileImage",
     userTweet: "BIG NEWS lol jk still Twitter",
     tweetImage: "",
     reactions: "267.1K",
@@ -46,9 +48,9 @@ export const listOfTweets = [
     tweetTitle: "Tweeter",
     username: "@Tweeter",
     username: "@CNN",
-    userImageProfil: "src/images/profil-tweeter.png",
+    userImageProfil: tweeterProfileImage,
     userTweet: "hello literally everyone",
-    tweetImage: "",
+    tweetImage: "src/images/tweet-image.png",
     reactions: "3.3K",
     retweet: "785.4K",
     reply: "118.7K",
@@ -59,7 +61,7 @@ export const listOfTweets = [
   {
     tweetTitle: "Tweeter",
     username: "@Tweeter",
-    userImageProfil: "src/images/profil-tweeter.png",
+    userImageProfil: tweeterProfileImage,
     userTweet: "hello literally everyone",
     tweetImage: "src/images/tweet-image.png",
     reactions: "267.1K",
@@ -68,5 +70,18 @@ export const listOfTweets = [
     timeOfPublication: ". Oct 4",
     isCertified: true,
     id: 5,
+  },
+  {
+    tweetTitle: "Badley Ortiz",
+    username: "@Bradley...",
+    userImageProfil: bradleyProfileImage,
+    userTweet: "Nothing to teach you today!",
+    tweetImage: "",
+    reactions: "268.1K",
+    retweet: "32.6K",
+    reply: "1.8K",
+    timeOfPublication: ". Jan 4",
+    isCertified: true,
+    id: 6,
   },
 ];
