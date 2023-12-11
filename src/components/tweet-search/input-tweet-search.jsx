@@ -1,13 +1,16 @@
 function InputTweetSearch() {
   return (
     <>
-      <input
-        type="search"
-        name=""
-        id=""
-        placeholder="search Twitter"
-        className="input-search-tweet"
-      />
+      <div className="input-tweet-search">
+        <img src="src/images/Icons/Search.png" alt="" />
+        <input
+          type="search"
+          name=""
+          id=""
+          placeholder="Search Twitter"
+          className="input-search-tweet"
+        />
+      </div>
     </>
   );
 }

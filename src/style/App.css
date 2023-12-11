@@ -300,12 +300,20 @@ a {
   padding: 1rem 2rem;
   gap: 1rem;
 }
-.input-search-tweet {
+.input-tweet-search {
+  display: flex;
   background-color: #202327;
   border-radius: 30px;
   width: 330px;
+  gap: 0.5rem;
   padding: 1rem 1.2rem;
+}
+.input-search-tweet {
+  background-color: #202327;
+  width: 330px;
   border: none;
+  outline: none;
+  color: white;
 }
 
 .trends-for-you,
@@ -371,6 +379,10 @@ a {
 .inline-profile-img-and-user-infos img:first-child {
   border-radius: 50%;
   max-width: 50px;
+}
+.userProfileImage {
+  border-radius: 50%;
+  max-width: 100px;
 }
 
 .toFollow .tweet-title-author {

@@ -34,7 +34,7 @@ export const listOfTweets = [
   {
     tweetTitle: "Tweeter",
     username: "@Tweeter",
-    userImageProfil: "tweeterProfileImage",
+    userImageProfil: tweeterProfileImage,
     userTweet: "BIG NEWS lol jk still Twitter",
     tweetImage: "",
     reactions: "267.1K",
@@ -72,7 +72,7 @@ export const listOfTweets = [
     id: 5,
   },
   {
-    tweetTitle: "Badley Ortiz",
+    tweetTitle: "Bradley Ortiz",
     username: "@Bradley...",
     userImageProfil: bradleyProfileImage,
     userTweet: "Nothing to teach you today!",
