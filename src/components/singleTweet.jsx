@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import TweetActions from "./tweet-actions";
+import { tweetContext } from "../contexts";
 
 export default function SingleTweet({ value }) {
   return (
-    <>
+    <tweetContext.Provider value={value}>
       <div className="tweet" key={value.id}>
         <div className="tweet-avatar">
           <Link to={`/profile/${value.username}`}>
@@ -30,13 +31,9 @@ export default function SingleTweet({ value }) {
             </div>
           </div>
 
-          <TweetActions
-            reply={value.reply}
-            reactions={value.reactions}
-            retweet={value.retweet}
-          />
+          <TweetActions />
         </div>
       </div>
-    </>
+    </tweetContext.Provider>
   );
 }

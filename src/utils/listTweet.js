@@ -2,6 +2,7 @@ import cnnProfileImage from "../images/tweet-profile-photo.png";
 import nytimeProfileImage from "../images/profil-ny.png";
 import bradleyProfileImage from "../images/profile-photo.png";
 import tweeterProfileImage from "../images/profil-tweeter.png";
+
 export const listOfTweets = [
   {
     tweetTitle: "CNN",

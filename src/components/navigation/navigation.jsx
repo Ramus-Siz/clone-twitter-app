@@ -15,8 +15,6 @@ function Navigation() {
           <NavLink to="/home">
             <div className="inline-navigate-sidebar">
               <img src="src\images\Icons\Home-Fill.png" alt="" />
-
-              {/* <img src="src\images\Icons\Home.png" alt="" /> */}
               <h3>Home</h3>
             </div>
           </NavLink>

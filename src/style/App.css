@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   background-color: black;
@@ -196,6 +199,7 @@ body {
 
 .reactions:hover {
   color: #f91880;
+  fill: #f91880;
 }
 
 #reactionsId:hover {
