@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
@@ -15,11 +15,16 @@ import Messages from "./pages/messages";
 import More from "./pages/more";
 import Notifications from "./pages/notifications";
 import Profile from "./pages/profile";
+import jsondatas from "./utils/initial-data.json";
+
 
 function App() {
 
+  let currentUser = jsondatas.currentUser;
+  const [infosCurrentUser, setInfosCurrentUser]=useState(currentUser)
+
   return (
-    <UserContext.Provider value={{ isLogged: true, pseudo:"@Bradley..." }}>
+    <UserContext.Provider value={{ isLogged: true, pseudo: infosCurrentUser.pseudo, name:infosCurrentUser.name, userImageProfil:infosCurrentUser.userImageProfil }}>
       <BrowserRouter>
         <Routes>
 
