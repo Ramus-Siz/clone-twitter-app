@@ -1,14 +1,17 @@
-import { listOfTweets } from "../../utils/listTweet";
+import { useContext } from "react";
+import { getTweets } from "../../App";
 import ShowMore from "../show-more/show-more";
 import AccountToFollow from "./acount-to-follow";
+import { tweetContext } from "../../contexts";
 
 function FollowList() {
-  const ListOtweetToMap = listOfTweets.slice(0, 3);
+  const copyOfListTweets = useContext(tweetContext);
+  const listTweetsToFolow = copyOfListTweets.slice(0, 3);
 
   return (
     <>
       <div className="follow-list">
-        {ListOtweetToMap.map((value) => (
+        {listTweetsToFolow.map((value) => (
           <AccountToFollow value={value} key={value.id} />
         ))}
         <ShowMore />

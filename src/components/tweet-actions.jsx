@@ -5,12 +5,16 @@ import { tweetContext } from "../contexts";
 export default function TweetActions() {
   const data = useContext(tweetContext);
   const [action, setActions] = useState(0);
+  
 
   function IncrementToggle() {
     setActions(action + 1);
   }
 
+ 
+
   return (
+
     <div className="tweet-actions">
       <div className="tweet-action reply">
         <img src="src/images/Icons/Replys.svg" alt="" />

@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
-import { listOfTweets } from "../../utils/listTweet";
 import Avatar from "../avatar";
 import Tweets from "../tweets";
 import UserNameProfile from "./user-name-profile";
+import { useContext } from "react";
+import { tweetContext } from "../../contexts";
 
 function UserInfosProfile() {
+  const copyOfListTweets = useContext(tweetContext);
   const { username } = useParams();
-  const userAccout = listOfTweets.find(
+  const userAccout = copyOfListTweets.find(
     (userAccout) => userAccout.username === username
   );
 
