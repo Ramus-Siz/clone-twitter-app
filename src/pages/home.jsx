@@ -22,8 +22,6 @@ function Home({ title }) {
   let currentUser = useContext(UserContext);
 
   const [newTweetInput, setNewTweetInput] = useState("");
-  const [newTweet, setNewTweet] = useState({});
-  const [tweetss, setTweetss] = useState(tweets);
 
   function handleTweetAdd(e) {
     setNewTweetInput(e.target.value);
@@ -51,13 +49,13 @@ function Home({ title }) {
 
   function setNewTweetsInfos(newTweetInput) {
     let keyOftheLastTweet = tweets.length - 1;
-    let keyOfTweet = tweets[keyOftheLastTweet] + 1;
+    let keyOfTweet = keyOftheLastTweet + 1;
 
     let newTweetToadd = {
       tweetTitle: currentUser.name,
       username: currentUser.pseudo,
       userImageProfil: currentUser.userImageProfil,
-      userTweet: `${newTweetInput}`,
+      userTweet: newTweetInput,
       tweetImage: "",
       reactions: "",
       retweet: "0",
