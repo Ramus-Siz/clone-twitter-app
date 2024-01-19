@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import "./style/App.css";
-import { UserContext } from "./contexts";
+import { TweetsProvider, UserContext } from "./contexts";
 import "./style/reset.css";
 import Layout from "./components/layout";
 import NoMatch from "./components/page404/no-match";
@@ -18,12 +18,18 @@ import Profile from "./pages/profile";
 import jsondatas from "./utils/initial-data.json";
 import { tweetContext } from "./contexts";
 
-export function getTweets() {
-  let listTweets = jsondatas.tweets;
-  const [listTweet, setListTweet] = useState(listTweets);
+import cnnProfileImage from "./images/tweet-profile-photo.png";
+import nytimeProfileImage from "./images/profil-ny.png";
+import bradleyProfileImage from "./images/profile-photo.png";
+import tweeterProfileImage from "./images/profil-tweeter.png";
+import nytimeTweetImage from "./images/tweet-image.png";
 
-  return listTweet;
-}
+// export function getTweets() {
+//   let listTweets = jsondatas.tweets;
+//   const [listTweet, setListTweet] = useState(listTweets);
+
+//   return listTweet;
+// }
 
 export function App() {
   let currentUser = jsondatas.currentUser;
@@ -31,6 +37,18 @@ export function App() {
   let listTweets = jsondatas.tweets;
   let copyOfListTweets = [...listTweets];
   const [tweets, setTweets] = useState(copyOfListTweets);
+  setImageUrl(listTweets);
+
+  function setImageUrl(listTweet) {
+    listTweet[0].userImageProfil = cnnProfileImage;
+    listTweet[1].userImageProfil = nytimeProfileImage;
+    listTweet[1].tweetImage = nytimeTweetImage;
+    listTweet[2].userImageProfil = tweeterProfileImage;
+    listTweet[3].userImageProfil = tweeterProfileImage;
+    listTweet[3].tweetImage = nytimeTweetImage;
+    listTweet[4].userImageProfil = tweeterProfileImage;
+    listTweet[5].userImageProfil = bradleyProfileImage;
+  }
 
   return (
     <UserContext.Provider
@@ -41,7 +59,7 @@ export function App() {
         userImageProfil: infosCurrentUser.userImageProfil,
       }}
     >
-      <tweetContext.Provider value={tweets}>
+      <TweetsProvider tweetsToInsert={tweets}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
@@ -59,7 +77,7 @@ export function App() {
             </Route>
           </Routes>
         </BrowserRouter>
-      </tweetContext.Provider>
+      </TweetsProvider>
     </UserContext.Provider>
   );
 }

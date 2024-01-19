@@ -29,7 +29,7 @@ export default function SingleTweet({ value }) {
           </div>
         </div>
 
-        <TweetActions />
+        <TweetActions value={value} />
       </div>
     </div>
   );

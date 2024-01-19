@@ -1,6 +1,6 @@
-export default function TweetButton() {
+export default function TweetButton({ handleClick }) {
   return (
-    <button type="button" className="button">
+    <button type="button" onClick={handleClick} className="button">
       Tweet
     </button>
   );

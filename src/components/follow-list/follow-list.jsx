@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { getTweets } from "../../App";
 import ShowMore from "../show-more/show-more";
 import AccountToFollow from "./acount-to-follow";
 import { tweetContext } from "../../contexts";

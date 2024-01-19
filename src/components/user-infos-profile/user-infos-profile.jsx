@@ -4,6 +4,7 @@ import Tweets from "../tweets";
 import UserNameProfile from "./user-name-profile";
 import { useContext } from "react";
 import { tweetContext } from "../../contexts";
+import SingleUserTweets from "../single-user-tweets";
 
 function UserInfosProfile() {
   const copyOfListTweets = useContext(tweetContext);
@@ -25,7 +26,7 @@ function UserInfosProfile() {
           user={userAccout.tweetTitle}
         />
       </div>
-      <Tweets />
+      <SingleUserTweets userAccout={userAccout} />
     </>
   );
 }

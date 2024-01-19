@@ -1,4 +1,7 @@
-export default function TweetEditorForm() {
+import { useState } from "react";
+
+export default function TweetEditorForm({ setNewTweetsInput }) {
+  console.log();
   return (
     <input
       type="text"
@@ -6,6 +9,7 @@ export default function TweetEditorForm() {
       className="tweet-editor-input"
       id=""
       placeholder="What's happening"
+      onChange={setNewTweetsInput}
     />
   );
 }
