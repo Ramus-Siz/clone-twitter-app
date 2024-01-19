@@ -48,7 +48,7 @@ function Home({ title }) {
   // let newTweetWithInfos = setNewTweetsInfos(newTweetInput);
 
   function setNewTweetsInfos(newTweetInput) {
-    let keyOftheLastTweet = tweets.length - 1;
+    let keyOftheLastTweet = tweets.length;
     let keyOfTweet = keyOftheLastTweet + 1;
 
     let newTweetToadd = {
