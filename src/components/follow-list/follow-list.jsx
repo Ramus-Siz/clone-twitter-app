@@ -4,8 +4,8 @@ import AccountToFollow from "./acount-to-follow";
 import { tweetContext } from "../../contexts";
 
 function FollowList() {
-  const copyOfListTweets = useContext(tweetContext);
-  const listTweetsToFolow = copyOfListTweets.slice(0, 3);
+  const { tweets } = useContext(tweetContext);
+  const listTweetsToFolow = tweets.slice(0, 3);
 
   return (
     <>

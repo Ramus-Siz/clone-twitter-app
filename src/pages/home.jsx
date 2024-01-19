@@ -16,24 +16,31 @@ import nytimeTweetImage from "../images/tweet-image.png";
 
 function Home({ title }) {
   // const { AddTweetToContext } = useContext(tweetContext);
-  let listTweets = jsondatas.tweets;
-  let copyOfListTweets = [...listTweets];
+  // let listTweets = jsondatas.tweets;
+  const { tweets, setTweetToinsert } = useContext(tweetContext);
 
   let currentUser = useContext(UserContext);
 
   const [newTweetInput, setNewTweetInput] = useState("");
   const [newTweet, setNewTweet] = useState({});
-  const [tweets, setTweet] = useState(copyOfListTweets);
+  const [tweetss, setTweetss] = useState(tweets);
 
   function handleTweetAdd(e) {
     setNewTweetInput(e.target.value);
-    setNewTweet(setNewTweetsInfos(newTweetInput));
   }
+
+  // function setInput() {
+  //   let tweetInput = e.target.value;
+  //   return tweetInput;
+  // }
 
   function handleClickButtonTweet(e) {
     e.preventDefault();
     console.log(newTweetInput);
-    setTweet([newTweet, ...tweets]);
+    let dataTweet = setNewTweetsInfos(newTweetInput);
+
+    setTweetToinsert([dataTweet, ...tweets]);
+
     console.log("the tweets: ", tweets);
   }
   // function AddTweetToContext(play) {
@@ -43,8 +50,8 @@ function Home({ title }) {
   // let newTweetWithInfos = setNewTweetsInfos(newTweetInput);
 
   function setNewTweetsInfos(newTweetInput) {
-    let keyOftheLastTweet = copyOfListTweets.length - 1;
-    let keyOfTweet = copyOfListTweets[keyOftheLastTweet] + 1;
+    let keyOftheLastTweet = tweets.length - 1;
+    let keyOfTweet = tweets[keyOftheLastTweet] + 1;
 
     let newTweetToadd = {
       tweetTitle: currentUser.name,
@@ -89,7 +96,7 @@ function Home({ title }) {
           </div>
         </div>
       </div>
-      <Tweets newCopyOfListTweets={tweets} />
+      <Tweets />
     </main>
   );
 }

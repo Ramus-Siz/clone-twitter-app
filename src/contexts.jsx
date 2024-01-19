@@ -1,6 +1,8 @@
 import { createContext, useState } from "react";
 import jsonData from "./utils/initial-data.json";
 export const tweetContext = createContext();
+const copyOfListTweets = [...jsonData.tweets];
+
 export const UserContext = createContext({
   isLogged: false,
   name: "",
@@ -8,10 +10,14 @@ export const UserContext = createContext({
   userImageProfil: "",
 });
 
-export function TweetsProvider({ children, tweetsToInsert }) {
-  const [tweetToInsert, setTweetToinsert] = useState(tweetsToInsert);
+export function TweetsProvider({ children }) {
+  const [theNweTweet, setTheNweTweet] = useState(copyOfListTweets);
+
+  function setTweetToinsert(newTwets) {
+    setTheNweTweet(newTwets);
+  }
   return (
-    <tweetContext.Provider value={tweetToInsert}>
+    <tweetContext.Provider value={{ tweets: theNweTweet, setTweetToinsert }}>
       {children}
     </tweetContext.Provider>
   );

@@ -3,10 +3,10 @@ import { UserContext, tweetContext } from "../contexts";
 import SingleTweet from "./singleTweet";
 
 export default function SingleUserTweets({ userAccout }) {
-  const copyOfListTweets = useContext(tweetContext);
+  const { tweets } = useContext(tweetContext);
 
   // filter the context containing the array of tweet objects
-  const tweetFilter = copyOfListTweets.filter(
+  const tweetFilter = tweets.filter(
     (user) => user.username == userAccout.username
   );
   console.log(tweetFilter);

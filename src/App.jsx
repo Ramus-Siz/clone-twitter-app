@@ -59,7 +59,7 @@ export function App() {
         userImageProfil: infosCurrentUser.userImageProfil,
       }}
     >
-      <TweetsProvider tweetsToInsert={tweets}>
+      <TweetsProvider>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>

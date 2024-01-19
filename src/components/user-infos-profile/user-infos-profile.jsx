@@ -7,9 +7,10 @@ import { tweetContext } from "../../contexts";
 import SingleUserTweets from "../single-user-tweets";
 
 function UserInfosProfile() {
-  const copyOfListTweets = useContext(tweetContext);
+  const { tweets } = useContext(tweetContext);
+
   const { username } = useParams();
-  const userAccout = copyOfListTweets.find(
+  const userAccout = tweets.find(
     (userAccout) => userAccout.username === username
   );
 
