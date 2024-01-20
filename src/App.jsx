@@ -31,7 +31,7 @@ import nytimeTweetImage from "./images/tweet-image.png";
 //   return listTweet;
 // }
 
-export function App() {
+export default function App() {
   let currentUser = jsondatas.currentUser;
   const [infosCurrentUser, setInfosCurrentUser] = useState(currentUser);
   let listTweets = jsondatas.tweets;

@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import SingleTweet from "./singleTweet";
-import jsondatas from "../utils/initial-data.json";
-import { UserContext, tweetContext } from "../contexts";
+import { tweetContext } from "../contexts";
 
 export default function Tweets() {
   const { tweets } = useContext(tweetContext);
