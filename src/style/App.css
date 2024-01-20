@@ -208,12 +208,17 @@ body {
 }
 .reply:hover {
   color: #1d9bf0;
+  fill: #1d9bf0;
 }
 .share:hover {
   color: #1d9bf0;
 }
 .retweet:hover {
   color: #0bc486;
+  fill: #0bc486;
+}
+#idRetweet:hover {
+  fill: #0bc486;
 }
 
 /* SIDEBAR */
