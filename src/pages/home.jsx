@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Header, Tweets } from "../components";
 import { TweetEditorForm } from "../components";
 import { TweetAvatar } from "../components";
@@ -22,6 +22,7 @@ function Home({ title }) {
   let currentUser = useContext(UserContext);
 
   const [newTweetInput, setNewTweetInput] = useState("");
+  const inputRef = useRef(null);
 
   function handleTweetAdd(e) {
     setNewTweetInput(e.target.value);
@@ -38,7 +39,7 @@ function Home({ title }) {
     let dataTweet = setNewTweetsInfos(newTweetInput);
 
     setTweetToinsert([dataTweet, ...tweets]);
-
+    inputRef.current.value = "";
     console.log("the tweets: ", tweets);
   }
   // function AddTweetToContext(play) {
@@ -87,7 +88,10 @@ function Home({ title }) {
       <div className="tweet-editor">
         <TweetAvatar avatarImg="src/images/profile-photo.png" />
         <div className="tweet-editor-form">
-          <TweetEditorForm setNewTweetsInput={handleTweetAdd} />
+          <TweetEditorForm
+            setNewTweetsInput={handleTweetAdd}
+            clearInput={inputRef}
+          />
           <div className="tweet-editor-buttons">
             <TweetButtonActions />
             <TweetButton handleClick={handleClickButtonTweet} />

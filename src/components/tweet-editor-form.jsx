@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-export default function TweetEditorForm({ setNewTweetsInput }) {
+export default function TweetEditorForm({ setNewTweetsInput, clearInput }) {
   console.log();
   return (
     <input
@@ -10,6 +9,7 @@ export default function TweetEditorForm({ setNewTweetsInput }) {
       id=""
       placeholder="What's happening"
       onChange={setNewTweetsInput}
+      ref={clearInput}
     />
   );
 }
