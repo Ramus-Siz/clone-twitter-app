@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IncerementeOrDecrementeLikes } from "../utils/actions-buttons-functions";
 export default function TweetActions({ value }) {
   const [action, setActions] = useState(value.reactions);
-  const [iconeLikeOutline, setIconeLike] = useState(
+  const [iconeLikeOutline, setIconeLikeOutline] = useState(
     <ion-icon name="heart-outline"></ion-icon>
   );
   const [iconeLikSharp, setIconeLikSharp] = useState(
