@@ -18,7 +18,6 @@ function Home({ title }) {
   // const { AddTweetToContext } = useContext(tweetContext);
   // let listTweets = jsondatas.tweets;
   const { tweets, setTweetToinsert } = useContext(tweetContext);
-
   let currentUser = useContext(UserContext);
 
   const [newTweetInput, setNewTweetInput] = useState("");
@@ -35,12 +34,16 @@ function Home({ title }) {
 
   function handleClickButtonTweet(e) {
     e.preventDefault();
-    console.log(newTweetInput);
-    let dataTweet = setNewTweetsInfos(newTweetInput);
 
-    setTweetToinsert([dataTweet, ...tweets]);
-    inputRef.current.value = "";
-    console.log("the tweets: ", tweets);
+    if (newTweetInput.replace(/\s+/, "").length) {
+      let dataTweet = setNewTweetsInfos(newTweetInput);
+
+      setTweetToinsert([dataTweet, ...tweets]);
+      inputRef.current.value = "";
+      setNewTweetInput("");
+
+      console.log("the tweets: ", tweets);
+    }
   }
   // function AddTweetToContext(play) {
   //   setNewTweet(play.newTweets);
