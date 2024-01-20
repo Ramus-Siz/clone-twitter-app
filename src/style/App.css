@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
-
 body {
   background-color: black;
   color: white;
@@ -180,6 +179,10 @@ body {
   gap: 5rem;
   color: grey;
   font-size: 1rem;
+}
+
+#sharp {
+  color: #f91880;
 }
 
 .tweet-actions svg {
