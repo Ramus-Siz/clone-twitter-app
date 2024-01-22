@@ -1,7 +1,12 @@
 import { useState } from "react";
-import { IncerementeOrDecrementeLikes } from "../utils/actions-buttons-functions";
+import {
+  IncerementeOrDecrementeLikes,
+  formatLikes,
+} from "../utils/actions-buttons-functions";
 export default function TweetActions({ value }) {
-  const [action, setActions] = useState(value.reactions);
+  let formatLike = formatLikes(value.reactions);
+  const [action, setActions] = useState(formatLikes(value.reactions));
+
   const [iconeLikeOutline, setIconeLikeOutline] = useState(
     <ion-icon name="heart-outline"></ion-icon>
   );
@@ -10,13 +15,13 @@ export default function TweetActions({ value }) {
   );
 
   function IncrementToggle() {
-    let like = IncerementeOrDecrementeLikes(value);
-    setActions(like);
+    let likes = IncerementeOrDecrementeLikes(value);
+    setActions(formatLikes(likes));
     // setIconeLike(iconeLikSharp);
   }
 
   return (
-    <div className="tweet-actions">
+    <div className="tweet-actions ">
       <div className="tweet-action reply">
         <svg
           width="20"

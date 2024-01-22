@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   background-color: black;
   color: white;
@@ -202,13 +206,16 @@ body {
   color: #f91880;
   fill: #f91880;
 }
-
-#reactionsId:hover {
+.reactions:hover,
+.reactions svg:hover {
+  color: #f91880;
   fill: #f91880;
 }
-.reply:hover {
+
+.reply:hover,
+.reply svg:hover {
+  stroke: #1d9bf0;
   color: #1d9bf0;
-  fill: #1d9bf0;
 }
 .share:hover {
   color: #1d9bf0;
@@ -217,8 +224,11 @@ body {
   color: #0bc486;
   fill: #0bc486;
 }
-#idRetweet:hover {
+.retweet:hover,
+.retweet:hover {
+  color: #0bc486;
   fill: #0bc486;
+  stroke: #0bc486;
 }
 
 /* SIDEBAR */

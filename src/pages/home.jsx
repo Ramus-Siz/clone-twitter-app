@@ -40,7 +40,7 @@ function Home({ title }) {
 
       setTweetToinsert([dataTweet, ...tweets]);
       inputRef.current.value = "";
-      setNewTweetInput("");
+      // setNewTweetInput("");
 
       console.log("the tweets: ", tweets);
     }
