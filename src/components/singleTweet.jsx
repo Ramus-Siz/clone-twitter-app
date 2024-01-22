@@ -20,9 +20,7 @@ export default function SingleTweet({ value }) {
                 className="tweet-title-author"
               />
             )}
-            <p className="tweet-title-details text-3xl font-bold underline">
-              {value.username}
-            </p>
+            <p className="tweet-title-details">{value.username}</p>
             <p className="tweet-title-details">{value.timeOfPublication}</p>
           </div>
           <p className="tweet-text">{value.userTweet}</p>
