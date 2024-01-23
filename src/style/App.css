@@ -164,7 +164,7 @@ body {
 
 .tweet-image {
   width: 100%;
-  padding: 0.3rem 0 0 0;
+  /* padding: 0.3rem 0 0 0; */
 }
 
 .tweet-image img {

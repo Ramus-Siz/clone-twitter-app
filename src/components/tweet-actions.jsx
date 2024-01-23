@@ -21,7 +21,7 @@ export default function TweetActions({ value }) {
   }
 
   return (
-    <div className="tweet-actions ">
+    <div className="flex justify-center items-center gap-20 text[grey]">
       <div className="tweet-action reply">
         <svg
           width="20"

@@ -31,8 +31,14 @@ export default function SingleTweet({ value }) {
             <p className="text-[#6e767d]">{value.timeOfPublication}</p>
           </div>
           <p className="text-[#d9d9d9] text-base">{value.userTweet}</p>
-          <div className="tweet-image">
-            {value.tweetImage && <img src={value.tweetImage} alt="" />}
+          <div className="w-full pt-1.5">
+            {value.tweetImage && (
+              <img
+                src={value.tweetImage}
+                alt=""
+                className="max-w-full h-auto rounded-[50px] border-solid border-1 border-[#2f3336]"
+              />
+            )}
           </div>
         </div>
 
