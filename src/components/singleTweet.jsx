@@ -18,19 +18,19 @@ export default function SingleTweet({ value }) {
       </div>
       <div className="flex flex-col items-start justify-start gap-7 w-full">
         <div className="flex flex-col gap-2">
-          <div className="tweet-title">
-            <span className="tweet-title-author">{value.tweetTitle}</span>
+          <div className="flex justify-start items-start gap-2.5 text-base">
+            <span className="text-basetext-base">{value.tweetTitle}</span>
             {value.isCertified && (
               <img
                 src="src/images/Icons/cerfied.png"
                 alt=""
-                className="tweet-title-author"
+                className="text-base"
               />
             )}
-            <p className="tweet-title-details">{value.username}</p>
-            <p className="tweet-title-details">{value.timeOfPublication}</p>
+            <p className="text-[#6e767d]">{value.username}</p>
+            <p className="text-[#6e767d]">{value.timeOfPublication}</p>
           </div>
-          <p className="tweet-text">{value.userTweet}</p>
+          <p className="text-[#d9d9d9] text-base">{value.userTweet}</p>
           <div className="tweet-image">
             {value.tweetImage && <img src={value.tweetImage} alt="" />}
           </div>
