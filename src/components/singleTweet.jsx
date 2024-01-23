@@ -3,8 +3,11 @@ import TweetActions from "./tweet-actions";
 
 export default function SingleTweet({ value }) {
   return (
-    <div className="tweet" key={value.id}>
-      <div className="tweet-avatar">
+    <div
+      className=" flex justify-start  items-start gap-4 px-6 py-6 border-b-1-[#2f3336]"
+      key={value.id}
+    >
+      <div className="flex-[0_0_70px]">
         <Link to={`/profile/${value.username}`}>
           <img src={value.userImageProfil} alt="" />
         </Link>
