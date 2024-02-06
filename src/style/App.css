@@ -121,7 +121,7 @@ body {
   flex: 0 0 70px;
 }
 
-.tweet-avatar img {
+/* .tweet-avatar img {
   max-width: 100%;
   max-height: 100px;
   border-radius: 100%;
@@ -164,7 +164,7 @@ body {
 
 .tweet-image {
   width: 100%;
-  /* padding: 0.3rem 0 0 0; */
+  padding: 0.3rem 0 0 0; 
 }
 
 .tweet-image img {
@@ -183,7 +183,7 @@ body {
   gap: 5rem;
   color: grey;
   font-size: 1rem;
-}
+} */
 
 #sharp {
   color: #f91880;

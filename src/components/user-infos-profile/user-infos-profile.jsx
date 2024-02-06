@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import Avatar from "../avatar";
-import Tweets from "../tweets";
 import UserNameProfile from "./user-name-profile";
 import { useContext } from "react";
 import { tweetContext } from "../../contexts";
@@ -8,6 +7,7 @@ import SingleUserTweets from "../single-user-tweets";
 
 function UserInfosProfile() {
   const { tweets } = useContext(tweetContext);
+  console.log(tweets);
 
   const { username } = useParams();
   const userAccout = tweets.find(

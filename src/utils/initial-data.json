@@ -2,7 +2,7 @@
   "currentUser": {
     "pseudo": "@Bradley...",
     "name": "Bradley Ortiz",
-    "userImageProfil": "/images/profile-photo.png"
+    "userImageProfil": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/526.jpg"
   },
 
   "tweets": [
@@ -29,7 +29,7 @@
       "reactions": 482,
       "isLiked": false,
       "retweet": "48",
-      "reply": "19",
+      "reply": "33",
       "timeOfPublication": ". 2h",
       "isCertified": true,
       "id": 2

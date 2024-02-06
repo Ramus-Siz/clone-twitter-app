@@ -5,8 +5,7 @@ import { TweetAvatar } from "../components";
 import { TweetButton } from "../components";
 import { TweetButtonActions } from "../components";
 import { UserContext, tweetContext } from "../contexts";
-
-import jsondatas from "../utils/initial-data.json";
+import axios from "axios";
 
 import cnnProfileImage from "../images/tweet-profile-photo.png";
 import nytimeProfileImage from "../images/profil-ny.png";
@@ -37,14 +36,21 @@ function Home({ title }) {
 
     if (newTweetInput.replace(/\s+/, "").length) {
       let dataTweet = setNewTweetsInfos(newTweetInput);
+      axios
+        .post(
+          "https://65c0d3fcdc74300bce8cce71.mockapi.io/data/tweets",
+          dataTweet
+        )
+        .then((response) => console.log(response))
+        .catch((err) => console.error(err));
 
       setTweetToinsert([dataTweet, ...tweets]);
       inputRef.current.value = "";
       // setNewTweetInput("");
-
       console.log("the tweets: ", tweets);
     }
   }
+
   // function AddTweetToContext(play) {
   //   setNewTweet(play.newTweets);
   //   setTweet(newTweet, ...tweets);
@@ -60,7 +66,7 @@ function Home({ title }) {
       username: currentUser.pseudo,
       userImageProfil: currentUser.userImageProfil,
       userTweet: newTweetInput,
-      tweetImage: "",
+      tweetImage: "https://loremflickr.com/628/433/abstract",
       reactions: 0,
       isLiked: false,
       retweet: "0",
@@ -90,7 +96,7 @@ function Home({ title }) {
     <main className="timeline">
       <Header title={"Home"} />
       <div className="tweet-editor">
-        <TweetAvatar avatarImg="src/images/profile-photo.png" />
+        <TweetAvatar avatarImg="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/526.jpg" />
         <div className="tweet-editor-form">
           <TweetEditorForm
             setNewTweetsInput={handleTweetAdd}
