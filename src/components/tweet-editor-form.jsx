@@ -1,14 +1,16 @@
 import { useState } from "react";
-export default function TweetEditorForm({ setNewTweetsInput, clearInput }) {
-  console.log();
+
+export default function TweetEditorForm({ register, clearInput }) {
   return (
     <input
       type="text"
-      name=""
+      name="newTweet"
+      {...register("newTweet", {
+        required: "Obligatoire",
+        maxLength: 180,
+      })}
       className="tweet-editor-input"
-      id=""
       placeholder="What's happening"
-      onChange={setNewTweetsInput}
       ref={clearInput}
     />
   );

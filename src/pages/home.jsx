@@ -6,58 +6,58 @@ import { TweetButton } from "../components";
 import { TweetButtonActions } from "../components";
 import { UserContext, tweetContext } from "../contexts";
 import axios from "axios";
-
-import cnnProfileImage from "../images/tweet-profile-photo.png";
-import nytimeProfileImage from "../images/profil-ny.png";
-import bradleyProfileImage from "../images/profile-photo.png";
-import tweeterProfileImage from "../images/profil-tweeter.png";
-import nytimeTweetImage from "../images/tweet-image.png";
+import { useForm } from "react-hook-form";
 
 function Home({ title }) {
   // const { AddTweetToContext } = useContext(tweetContext);
   // let listTweets = jsondatas.tweets;
   const { tweets, setTweetToinsert } = useContext(tweetContext);
   let currentUser = useContext(UserContext);
-
-  const [newTweetInput, setNewTweetInput] = useState("");
+  // const [newTweetInput, setNewTweetInput] = useState("");
   const inputRef = useRef(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  function handleTweetAdd(e) {
-    setNewTweetInput(e.target.value);
-  }
+  // function handleTweetAdd(e) {
+  //   setNewTweetInput(e.target.value);
+  // }
 
   // function setInput() {
   //   let tweetInput = e.target.value;
   //   return tweetInput;
   // }
 
-  function handleClickButtonTweet(e) {
-    e.preventDefault();
+  const onSubmit = (data) => {
+    console.log(data);
+    let twetinputData = data.newTweet;
+    console.log(twetinputData);
+    handleClickButtonTweet(twetinputData);
 
-    if (newTweetInput.replace(/\s+/, "").length) {
-      let dataTweet = setNewTweetsInfos(newTweetInput);
-      axios
-        .post(
-          "https://65c0d3fcdc74300bce8cce71.mockapi.io/data/tweets",
-          dataTweet
-        )
-        .then((response) => console.log(response))
-        .catch((err) => console.error(err));
+    // PostTweet();
+  };
 
-      setTweetToinsert([dataTweet, ...tweets]);
-      inputRef.current.value = "";
-      // setNewTweetInput("");
-      console.log("the tweets: ", tweets);
-    }
+  function handleClickButtonTweet(twetinputData) {
+    let dataTweet = setNewTweetsInfos(twetinputData);
+    axios
+      .post(
+        "https://65c0d3fcdc74300bce8cce71.mockapi.io/data/tweets",
+        dataTweet
+      )
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
+
+    setTweetToinsert([dataTweet, ...tweets]);
+    inputRef.current.value = "";
+    // setNewTweetInput("");
+    console.log("the tweets: ", tweets);
   }
 
-  // function AddTweetToContext(play) {
-  //   setNewTweet(play.newTweets);
-  //   setTweet(newTweet, ...tweets);
-  // }
   // let newTweetWithInfos = setNewTweetsInfos(newTweetInput);
 
-  function setNewTweetsInfos(newTweetInput) {
+  function setNewTweetsInfos(twetinputData) {
     let keyOftheLastTweet = tweets.length;
     let keyOfTweet = keyOftheLastTweet + 1;
 
@@ -65,7 +65,7 @@ function Home({ title }) {
       tweetTitle: currentUser.name,
       username: currentUser.pseudo,
       userImageProfil: currentUser.userImageProfil,
-      userTweet: newTweetInput,
+      userTweet: twetinputData,
       tweetImage: "https://loremflickr.com/628/433/abstract",
       reactions: 0,
       isLiked: false,
@@ -98,14 +98,17 @@ function Home({ title }) {
       <div className="tweet-editor">
         <TweetAvatar avatarImg="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/526.jpg" />
         <div className="tweet-editor-form">
-          <TweetEditorForm
-            setNewTweetsInput={handleTweetAdd}
-            clearInput={inputRef}
-          />
-          <div className="tweet-editor-buttons">
-            <TweetButtonActions />
-            <TweetButton handleClick={handleClickButtonTweet} />
-          </div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <TweetEditorForm
+              // setNewTweetsInput={handleTweetAdd}
+              register={register}
+              clearInput={inputRef}
+            />
+            <div className="tweet-editor-buttons">
+              <TweetButtonActions />
+              <TweetButton />
+            </div>
+          </form>
         </div>
       </div>
       <Tweets />
