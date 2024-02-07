@@ -14,7 +14,7 @@ function Home({ title }) {
   const { tweets, setTweetToinsert } = useContext(tweetContext);
   let currentUser = useContext(UserContext);
   // const [newTweetInput, setNewTweetInput] = useState("");
-  const inputRef = useRef(null);
+  const inputRef = useRef(null); // to clear the tweet input
   const {
     register,
     handleSubmit,
