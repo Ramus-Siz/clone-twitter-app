@@ -77,6 +77,9 @@ function Home({ title }) {
               <TweetButton />
             </div>
           </form>
+          <p className="text-xs h-3 " style={{ color: "red" }}>
+            {errors.newTweet && <span>{errors.newTweet.message}</span>}
+          </p>
         </div>
       </div>
       <Tweets />

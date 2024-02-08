@@ -23,7 +23,7 @@ export function TweetsProvider({ children }) {
 
   const [theNweTweet, setTheNweTweet] = useState(tweetsData);
   console.log(theNweTweet);
-  //update the tweetContex
+  //update the tweetContext
   function setTweetToinsert(newTwets) {
     setTheNweTweet(newTwets);
   }
