@@ -5,7 +5,8 @@ import { tweetContext } from "../../contexts";
 
 function FollowList() {
   const { tweets } = useContext(tweetContext);
-  const listTweetsToFolow = tweets.slice(0, 3);
+  let toFollow = tweets.filter((account) => account.username !== "@Bradley...");
+  const listTweetsToFolow = toFollow.slice(0, 3);
 
   return (
     <>
