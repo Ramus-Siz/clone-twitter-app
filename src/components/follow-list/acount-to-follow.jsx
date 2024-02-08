@@ -12,7 +12,8 @@ function AccountToFollow({ value }) {
                 <img src={value.userImageProfil} alt="" />
                 <div>
                   <div className="inline-author-and-iscertified">
-                    <p className="tweet-title-author">{value.tweetTitle}</p>
+                    <p className="tweet-title-author">{value.tweetitle}</p>
+                    {console.log(value.tweetitle)}
                     {value.isCertified && (
                       <img
                         src="src/images/Icons/cerfied.png"

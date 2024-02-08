@@ -47,7 +47,7 @@ function Home({ title }) {
     let keyOfTweet = keyOftheLastTweet + 1;
 
     let newTweetToadd = {
-      tweetTitle: currentUser.name,
+      tweetitle: currentUser.name,
       username: currentUser.pseudo,
       userImageProfil: currentUser.userImageProfil,
       userTweet: twetinputData,
