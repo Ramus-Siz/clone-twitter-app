@@ -28,7 +28,7 @@ function Home({ title }) {
 
   async function handleClickButtonTweet(dataTweet) {
     try {
-      const restonse = await axios.post(
+      const response = await axios.post(
         "https://65c0d3fcdc74300bce8cce71.mockapi.io/data/tweets",
         dataTweet
       );
