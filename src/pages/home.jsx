@@ -21,24 +21,22 @@ function Home({ title }) {
 
   const onSubmit = (data) => {
     console.log(data.newTweet);
-    handleClickButtonTweet(data.newTweet);
+    let dataTweet = setNewTweetsInfos(data.newTweet);
+
+    handleClickButtonTweet(dataTweet);
   };
 
-  function handleClickButtonTweet(twetinputData) {
-    let dataTweet = setNewTweetsInfos(twetinputData);
-    axios
-      .post(
+  async function handleClickButtonTweet(dataTweet) {
+    try {
+      const restonse = await axios.post(
         "https://65c0d3fcdc74300bce8cce71.mockapi.io/data/tweets",
         dataTweet
-      )
-
-      .then((response) => console.log(response), reset())
-      .catch((err) => console.log(err));
-
+      );
+    } catch (error) {
+      console.log(error);
+    }
+    reset();
     setTweetToinsert([dataTweet, ...tweets]);
-
-    inputRef.current.value = "";
-    // setNewTweetInput("");
     console.log("the tweets: ", tweets);
   }
 
@@ -68,7 +66,7 @@ function Home({ title }) {
     <main className="timeline">
       <Header title={"Home"} />
       <div className="tweet-editor">
-        <TweetAvatar avatarImg="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/526.jpg" />
+        <TweetAvatar avatarImg={currentUser.userImageProfil} />
         <div className="tweet-editor-form">
           <form onSubmit={handleSubmit(onSubmit)}>
             <TweetEditorForm register={register} />
