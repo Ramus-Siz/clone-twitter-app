@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function TweetEditorForm({ register, clearInput }) {
+export default function TweetEditorForm({ register }) {
   return (
     <input
       type="text"
@@ -11,7 +11,6 @@ export default function TweetEditorForm({ register, clearInput }) {
       })}
       className="tweet-editor-input"
       placeholder="What's happening"
-      ref={clearInput}
     />
   );
 }

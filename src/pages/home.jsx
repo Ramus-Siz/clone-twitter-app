@@ -9,34 +9,19 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 
 function Home({ title }) {
-  // const { AddTweetToContext } = useContext(tweetContext);
-  // let listTweets = jsondatas.tweets;
   const { tweets, setTweetToinsert } = useContext(tweetContext);
   let currentUser = useContext(UserContext);
-  // const [newTweetInput, setNewTweetInput] = useState("");
   const inputRef = useRef(null); // to clear the tweet input
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  // function handleTweetAdd(e) {
-  //   setNewTweetInput(e.target.value);
-  // }
-
-  // function setInput() {
-  //   let tweetInput = e.target.value;
-  //   return tweetInput;
-  // }
-
   const onSubmit = (data) => {
-    console.log(data);
-    let twetinputData = data.newTweet;
-    console.log(twetinputData);
-    handleClickButtonTweet(twetinputData);
-
-    // PostTweet();
+    console.log(data.newTweet);
+    handleClickButtonTweet(data.newTweet);
   };
 
   function handleClickButtonTweet(twetinputData) {
@@ -46,16 +31,16 @@ function Home({ title }) {
         "https://65c0d3fcdc74300bce8cce71.mockapi.io/data/tweets",
         dataTweet
       )
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
+
+      .then((response) => console.log(response), reset())
+      .catch((err) => console.log(err));
 
     setTweetToinsert([dataTweet, ...tweets]);
+
     inputRef.current.value = "";
     // setNewTweetInput("");
     console.log("the tweets: ", tweets);
   }
-
-  // let newTweetWithInfos = setNewTweetsInfos(newTweetInput);
 
   function setNewTweetsInfos(twetinputData) {
     let keyOftheLastTweet = tweets.length;
@@ -79,19 +64,6 @@ function Home({ title }) {
     return newTweetToadd;
   }
 
-  // function setImageUrl(listTweet) {
-  //   listTweet[0].userImageProfil = cnnProfileImage;
-  //   listTweet[1].userImageProfil = nytimeProfileImage;
-  //   listTweet[1].tweetImage = nytimeTweetImage;
-  //   listTweet[2].userImageProfil = tweeterProfileImage;
-  //   listTweet[3].userImageProfil = tweeterProfileImage;
-  //   listTweet[3].tweetImage = nytimeTweetImage;
-  //   listTweet[4].userImageProfil = tweeterProfileImage;
-  //   listTweet[5].userImageProfil = bradleyProfileImage;
-  // }
-
-  // console.log(tweets);
-
   return (
     <main className="timeline">
       <Header title={"Home"} />
@@ -99,11 +71,7 @@ function Home({ title }) {
         <TweetAvatar avatarImg="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/526.jpg" />
         <div className="tweet-editor-form">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <TweetEditorForm
-              // setNewTweetsInput={handleTweetAdd}
-              register={register}
-              clearInput={inputRef}
-            />
+            <TweetEditorForm register={register} />
             <div className="tweet-editor-buttons">
               <TweetButtonActions />
               <TweetButton />
