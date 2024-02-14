@@ -1,0 +1,94 @@
+{
+  "currentUser": {
+    "pseudo": "@Bradley...",
+    "name": "Bradley Ortiz",
+    "userImageProfil": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/526.jpg"
+  },
+
+  "tweets": [
+    {
+      "tweetTitle": "CNN",
+      "username": "@CNN",
+      "userImageProfil": "",
+      "userTweet": "President Joe Biden touted a new agreement reached with the European Union to ease Trump-era tariffs on aluminum and steel as a major breakthrough that would serve to both strengthen the US steel industry and combat the global climate crisis.",
+      "tweetImage": "",
+      "reactions": 188,
+      "isLiked": false,
+      "retweet": 144,
+      "reply": 5,
+      "timeOfPublication": ". 7m",
+      "isCertified": true,
+      "id": 1
+    },
+    {
+      "tweetTitle": "The New York Times",
+      "username": "@nytimes",
+      "userImageProfil": "",
+      "userTweet": "Gardening boomed during the pandemic. Six Black writers share how it has helped them re-establish, and reimagine, a connection to cultivation and the land",
+      "tweetImage": "src/images/tweet-image.png",
+      "reactions": 482,
+      "isLiked": false,
+      "retweet": "48",
+      "reply": "33",
+      "timeOfPublication": ". 2h",
+      "isCertified": true,
+      "id": 2
+    },
+    {
+      "tweetTitle": "Tweeter",
+      "username": "@Tweeter",
+      "userImageProfil": "",
+      "userTweet": "BIG NEWS lol jk still Twitter",
+      "tweetImage": "",
+      "reactions": 267100,
+      "isLiked": false,
+      "retweet": "36.6K",
+      "reply": "6.8K",
+      "timeOfPublication": ". Oct 29",
+      "isCertified": true,
+      "id": 3
+    },
+    {
+      "tweetTitle": "Tweeter",
+      "username": "@Tweeter",
+      "userImageProfil": "",
+      "userTweet": "hello literally everyone",
+      "tweetImage": "src/images/tweet-image.png",
+      "reactions": 3300,
+      "isLiked": false,
+      "retweet": "785.4K",
+      "reply": "118.7K",
+      "timeOfPublication": ". Oct 4",
+      "isCertified": true,
+      "id": 4
+    },
+    {
+      "tweetTitle": "Tweeter",
+      "username": "@Tweeter",
+      "userImageProfil": "",
+      "userTweet": "hello literally everyone",
+      "tweetImage": "",
+      "reactions": 267100,
+      "isLiked": false,
+      "retweet": "36.6K",
+      "reply": "6.8K",
+      "timeOfPublication": ". Oct 4",
+      "isCertified": true,
+      "id": 5
+    },
+    {
+      "tweetTitle": "Bradley Ortiz",
+      "username": "@Bradley...",
+      "userImageProfil": "src/images/profile-photo.png",
+      "userTweet": "Nothing to teach you today!",
+      "tweetImage": "",
+      "reactions": 268,
+      "isLiked": false,
+      "retweet": "32.6K",
+      "reply": "1.8K",
+      "timeOfPublication": ". Jan 4",
+      "isCertified": true,
+      "id": 6
+    }
+  ]
+}
