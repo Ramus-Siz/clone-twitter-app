@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import SingleTweet from "./singleTweet";
 import { tweetContext } from "../contexts";
-import jsondata from "../utils/initial-data.json";
-export default function Tweets() {
-  console.log(jsondata);
-  console.log(jsondata.currentUser.name);
 
+export default function Tweets() {
   const { tweets } = useContext(tweetContext);
+  console.log(tweets);
+
   return (
     <div className="tweets">
       {tweets.map((value) => (

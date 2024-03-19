@@ -4,8 +4,7 @@ import {
   formatLikes,
 } from "../utils/actions-buttons-functions";
 export default function TweetActions({ value }) {
-  let formatLike = formatLikes(value.reactions);
-  const [action, setActions] = useState(formatLikes(value.reactions));
+  const [action, setActions] = useState(formatLikes(value.favoriteCount));
 
   const [iconeLikeOutline, setIconeLikeOutline] = useState(
     <ion-icon name="heart-outline"></ion-icon>
@@ -36,7 +35,7 @@ export default function TweetActions({ value }) {
           />
         </svg>
 
-        <span>{value.reply}</span>
+        <span>{value.repliesCount}</span>
       </div>
       <div className="tweet-action retweet">
         <svg
@@ -53,11 +52,10 @@ export default function TweetActions({ value }) {
           />
         </svg>
 
-        <span>{value.retweet}</span>
+        <span>{value.retweetCount}</span>
       </div>
       <div className="tweet-action reactions" onClick={IncrementToggle}>
-        {}
-        {value.isLiked ? iconeLikSharp : iconeLikeOutline}
+        {/* {value.isLiked ? iconeLikSharp : iconeLikeOutline} */}
 
         <span>{action}</span>
       </div>

@@ -1,9 +1,7 @@
 import axios from "axios";
 
 const getData = async () => {
-  const { data } = await axios.get(
-    `https://65c0d3fcdc74300bce8cce71.mockapi.io/data/tweets`
-  );
+  const { data } = await axios.get(`http://localhost:8000/api/tweets`);
   const tweets = data.reverse();
   return tweets;
 };

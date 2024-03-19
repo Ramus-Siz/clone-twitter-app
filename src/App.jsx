@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import "./style/App.css";
-import { TweetsProvider, UserContext } from "./contexts";
+import { TweetsProvider, UsersProvider } from "./contexts";
 import "./style/reset.css";
 import Layout from "./components/layout";
 import NoMatch from "./components/page404/no-match";
@@ -34,21 +34,14 @@ export default function App() {
   // }
 
   return (
-    <UserContext.Provider
-      value={{
-        isLogged: true,
-        pseudo: infosCurrentUser.pseudo,
-        name: infosCurrentUser.name,
-        userImageProfil: infosCurrentUser.userImageProfil,
-      }}
-    >
+    <UsersProvider>
       <TweetsProvider>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/profile/:username" element={<Profile />} />
+              <Route path="/profile/:handle" element={<Profile />} />
               <Route path="/explore" element={<Explore />} />
               <Route path="/messageS" element={<Messages />} />
               <Route path="/bookmark" element={<Bookmark />} />
@@ -61,6 +54,6 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </TweetsProvider>
-    </UserContext.Provider>
+    </UsersProvider>
   );
 }

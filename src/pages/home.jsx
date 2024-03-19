@@ -7,8 +7,14 @@ import { TweetButtonActions } from "../components";
 import { UserContext, tweetContext } from "../contexts";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import InfiniteScroll from "react-infinite-scroll-component";
+import FechTweetsData from "../components/fetchData";
 
 function Home({ title }) {
+  const [dataForInfiniteScroll, setDataForInfiniteScroll] = useState(
+    Array.from({ length: 20 })
+  );
+  const [hasMore, setHasMore] = useState(true);
   const { tweets, setTweetToinsert } = useContext(tweetContext);
   let currentUser = useContext(UserContext);
   const inputRef = useRef(null); // to clear the tweet input
@@ -45,28 +51,38 @@ function Home({ title }) {
     let keyOfTweet = keyOftheLastTweet + 1;
 
     let newTweetToadd = {
-      tweetitle: currentUser.name,
-      username: currentUser.pseudo,
-      userImageProfil: currentUser.userImageProfil,
-      userTweet: twetinputData,
-      tweetImage: "https://loremflickr.com/628/433/abstract",
-      reactions: 0,
+      name: currentUser.name,
+      handle: currentUser.pseudo,
+      profilePicture: currentUser.profilePicture,
+      text: twetinputData,
+      media: "https://loremflickr.com/628/433/abstract",
+      favoriteCount: 0,
       isLiked: false,
-      retweet: "0",
-      reply: "0",
-      timeOfPublication: ". Jan 4",
-      isCertified: true,
+      retweetCount: "0",
+      repliesCount: "0",
+      createdAt: ". Jan 4",
       id: keyOfTweet,
     };
 
     return newTweetToadd;
   }
 
+  // const fetchDataWhenScrolling = () => {
+  //   setDataForInfiniteScroll(
+  //     dataForInfiniteScroll.concat(Array.from({ length: 20 }))
+  //   );
+  // };
+
   return (
+    // <InfiniteScroll
+    //   dataLength={dataForInfiniteScroll.length}
+    //   next={fetchDataWhenScrolling}
+    //   hasMore={hasMore}
+    // >
     <main className="timeline">
       <Header title={"Home"} />
       <div className="tweet-editor">
-        <TweetAvatar avatarImg={currentUser.userImageProfil} />
+        <TweetAvatar profilePicture={currentUser.userImageProfil} />
         <div className="tweet-editor-form">
           <form onSubmit={handleSubmit(onSubmit)}>
             <TweetEditorForm register={register} />
@@ -82,6 +98,7 @@ function Home({ title }) {
       </div>
       <Tweets />
     </main>
+    // </InfiniteScroll>
   );
 }
 
