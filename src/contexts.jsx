@@ -3,7 +3,7 @@ import jsonData from "./utils/initial-data.json";
 import FechTweetsData from "./components/fetchData";
 import FechUsersData from "./components/fetchUsersData";
 export const tweetContext = createContext([]);
-export const UserContext = createContext([]);
+export const UserContext = createContext({});
 
 export function TweetsProvider({ children }) {
   const [tweetsData, setTweetsData] = useState(FechTweetsData());

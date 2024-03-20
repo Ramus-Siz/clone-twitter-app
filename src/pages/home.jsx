@@ -35,7 +35,7 @@ function Home({ title }) {
   async function handleClickButtonTweet(dataTweet) {
     try {
       const response = await axios.post(
-        "https://65c0d3fcdc74300bce8cce71.mockapi.io/data/tweets",
+        "http://localhost:8000/api/tweets",
         dataTweet
       );
     } catch (error) {
@@ -51,17 +51,14 @@ function Home({ title }) {
     let keyOfTweet = keyOftheLastTweet + 1;
 
     let newTweetToadd = {
-      name: currentUser.name,
-      handle: currentUser.pseudo,
-      profilePicture: currentUser.profilePicture,
-      text: twetinputData,
-      media: "https://loremflickr.com/628/433/abstract",
+      id: keyOfTweet,
+      author: currentUser.name,
+      media: "",
       favoriteCount: 0,
-      isLiked: false,
       retweetCount: "0",
       repliesCount: "0",
+      text: twetinputData,
       createdAt: ". Jan 4",
-      id: keyOfTweet,
     };
 
     return newTweetToadd;
