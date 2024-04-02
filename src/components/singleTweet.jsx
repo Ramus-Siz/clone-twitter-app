@@ -4,10 +4,11 @@ import { UserContext } from "../contexts";
 import { useContext, useEffect, useState } from "react";
 import FechUsersData from "./fetchUsersData";
 import axios from "axios";
+import { FormatDate } from "../utils/formatedDate";
 
 export default function SingleTweet({ value }) {
   const [users, setUsers] = useState({});
-  const userUrl = `http://rafiki-twitter.onrender.com/api/users/${value.author}`;
+  const userUrl = `https://rafiki-twitter.onrender.com/api/users/${value.author}`;
   // console.log("users: ", users);
   // function findUsersById(id) {
   //   return users.find((user) => user.id === +id);
@@ -48,7 +49,7 @@ export default function SingleTweet({ value }) {
             />
 
             <p className="text-[#6e767d]">{users.handle}</p>
-            <p className="text-[#6e767d]">{formatDate(value.createdAt)}</p>
+            <p className="text-[#6e767d]">{FormatDate(value.createdAt)}</p>
           </div>
           <p className="text-[#d9d9d9] text-base">{value.text}</p>
           <div className="w-full pt-1.5">
@@ -56,7 +57,7 @@ export default function SingleTweet({ value }) {
               <img
                 src={value.media[0]}
                 alt=""
-                className="w-full h-[25em] rounded-[50px] border-solid border-1 border-[#2f3336]"
+                className="w-full h-[300px] object-cover object-center rounded-[50px] border-solid border-1 border-[#2f3336]"
               />
             )}
           </div>

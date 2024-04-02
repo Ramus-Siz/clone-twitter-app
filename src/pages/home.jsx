@@ -35,7 +35,7 @@ function Home({ title }) {
   async function handleClickButtonTweet(dataTweet) {
     try {
       const response = await axios.post(
-        "http://rafiki-twitter.onrender.com/api/tweets",
+        "https://rafiki-twitter.onrender.com/api/tweets",
         dataTweet
       );
     } catch (error) {

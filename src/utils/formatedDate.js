@@ -1,16 +1,14 @@
 export function FormatDate(dateString) {
   const date = new Date(dateString);
   const options = {
-    weekday: "short",
     month: "short",
     day: "2-digit",
     year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
-    second: "2-digit",
-    timeZoneName: "long",
+    timeZoneName: "short",
   };
-  return date.toLocaleString("en-US", options);
+  return date.toLocaleString("fr", options);
 }
 
 // const formattedDate = formatDate(
