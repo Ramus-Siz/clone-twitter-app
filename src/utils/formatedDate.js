@@ -1,17 +1,19 @@
-function FormatedDate(iscreatedAt) {
-  const date = new Date(iscreatedAt);
-
+export function FormatDate(dateString) {
+  const date = new Date(dateString);
   const options = {
-    weekday: "long",
+    weekday: "short",
+    month: "short",
+    day: "2-digit",
     year: "numeric",
-    month: "long",
-    day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
-    timeZoneName: "short",
+    timeZoneName: "long",
   };
-  const formattedDate = date.toLocaleString("en-US", options);
-
-  console.log("Date formate", formattedDate);
+  return date.toLocaleString("en-US", options);
 }
+
+// const formattedDate = formatDate(
+//   "Fri Mar 31 2013 20:26:24 GMT+0100 (West Africa Standard Time)"
+// );
+// console.log(formattedDate);

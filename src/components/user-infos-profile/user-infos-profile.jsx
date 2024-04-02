@@ -1,18 +1,26 @@
 import { useParams } from "react-router-dom";
 import Avatar from "../avatar";
 import UserNameProfile from "./user-name-profile";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { tweetContext, UserContext } from "../../contexts";
 import SingleUserTweets from "../single-user-tweets";
 
 function UserInfosProfile() {
-  const { users } = useContext(UserContext);
+  const { handle } = useParams();
+  const [users, setUsers] = useState({});
+  const userUrl = `http://localhost:8000/api/users/handle/${handle}`;
+
+  const bg = users.profileBackground;
   console.log(users);
 
-  const { handle } = useParams();
-  const userAccout = users.find((userAccout) => userAccout.handle === handle);
-  console.log("profileBackground: ", userAccout.profileBackground);
-  const bg = userAccout.profileBackground;
+  useEffect(() => {
+    const getUserData = async () => {
+      const { data } = await axios.get(userUrl);
+      console.log(data);
+      setUsers(data);
+    };
+    getUserData();
+  }, [handle]);
   return (
     <>
       <div
@@ -20,13 +28,13 @@ function UserInfosProfile() {
         style={{ backgroundImage: `url(${bg})` }}
       >
         <div className="profile-avatar">
-          <Avatar avatarImg={userAccout.profilePicture} />
+          <Avatar avatarImg={users.profilePicture} />
         </div>
       </div>
       <div className="user-name-profile">
-        <UserNameProfile username={userAccout.handle} user={userAccout.name} />
+        <UserNameProfile username={users.handle} user={users.name} />
       </div>
-      <SingleUserTweets userAccout={userAccout} />
+      <SingleUserTweets userAccout={users} />
     </>
   );
 }
