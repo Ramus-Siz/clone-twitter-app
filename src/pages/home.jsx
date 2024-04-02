@@ -9,6 +9,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import InfiniteScroll from "react-infinite-scroll-component";
 import FechTweetsData from "../components/fetchData";
+import { GenerateCreatedDataAndHour } from "../utils/formatedDate";
 
 function Home({ title }) {
   const [dataForInfiniteScroll, setDataForInfiniteScroll] = useState(
@@ -35,7 +36,7 @@ function Home({ title }) {
   async function handleClickButtonTweet(dataTweet) {
     try {
       const response = await axios.post(
-        "https://rafiki-twitter.onrender.com/api/tweets",
+        "https://rafiki-twitter.onrender.com/api/tweets/add",
         dataTweet
       );
     } catch (error) {
@@ -47,18 +48,18 @@ function Home({ title }) {
   }
 
   function setNewTweetsInfos(twetinputData) {
-    let keyOftheLastTweet = tweets.length;
+    let keyOftheLastTweet = tweets.length + 1;
     let keyOfTweet = keyOftheLastTweet + 1;
 
     let newTweetToadd = {
       id: keyOfTweet,
-      author: currentUser.name,
-      media: "",
+      author: 8,
+      media: [],
+      retweetCount: 0,
       favoriteCount: 0,
-      retweetCount: "0",
-      repliesCount: "0",
+      repliesCount: 0,
       text: twetinputData,
-      createdAt: ". Jan 4",
+      createdAt: GenerateCreatedDataAndHour(),
     };
 
     return newTweetToadd;

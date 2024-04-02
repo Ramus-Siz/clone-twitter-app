@@ -12,7 +12,7 @@ function ProfileSettings() {
   return (
     <>
       <div className="profile-settings">
-        <div className="avatar-profile-photo">
+        <div className="avatar-profile-photo mr-[8px]">
           <TweetAvatar avatarImg={user.users.profilePicture} />
         </div>
         <UserNameProfile user={user.users.name} username={user.users.handle} />

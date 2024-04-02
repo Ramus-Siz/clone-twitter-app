@@ -236,7 +236,7 @@ body {
   display: flex;
   flex-direction: column;
   align-content: center;
-  width: 300px;
+  width: 310px;
   height: 100%;
   position: sticky;
   padding: 20px 20px;
@@ -293,6 +293,7 @@ nav .logo-twitter:hover {
   align-content: center;
   align-items: center;
   position: absolute;
+
   bottom: 0px;
 }
 .avatar-profile-photo img {
