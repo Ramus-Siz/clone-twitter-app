@@ -43,7 +43,7 @@ function Home({ title }) {
       console.log(error);
     }
     reset();
-    setTweetToinsert([dataTweet, ...tweets]);
+    setTweetToinsert([...tweets, dataTweet]);
     console.log("the tweets: ", tweets);
   }
 

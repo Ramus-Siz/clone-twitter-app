@@ -292,7 +292,7 @@ nav .logo-twitter:hover {
   display: flex;
   align-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
 
   bottom: 0px;
 }
