@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import jsonData from "./utils/initial-data.json";
-import FechTweetsData from "./components/fetchData";
 import FechUsersData from "./components/fetchUsersData";
+import FechTweetsData from "./components/fetchData";
 export const tweetContext = createContext([]);
 export const UserContext = createContext({});
 

@@ -2,19 +2,14 @@ import { Link } from "react-router-dom";
 import TweetActions from "./tweet-actions";
 import { UserContext } from "../contexts";
 import { useContext, useEffect, useState } from "react";
-import FechUsersData from "./fetchUsersData";
+// import FechUsersData from "./fetchUsersData";
 import axios from "axios";
 import { FormatDate } from "../utils/formatedDate";
 
 export default function SingleTweet({ value }) {
   const [users, setUsers] = useState({});
   const userUrl = `https://rafiki-twitter.onrender.com/api/users/${value.author}`;
-  // console.log("users: ", users);
-  // function findUsersById(id) {
-  //   return users.find((user) => user.id === +id);
-  // }
-
-  // let users = findUsersById(value.author);
+  console.log("users: ", users);
 
   useEffect(() => {
     const getUserData = async () => {
@@ -52,7 +47,7 @@ export default function SingleTweet({ value }) {
             <p className="text-[#6e767d]">{FormatDate(value.createdAt)}</p>
           </div>
           <p className="text-[#d9d9d9] text-base">{value.text}</p>
-          <div className="w-full pt-1.5">
+          <div className="max-w-full pt-1.5">
             {value.media[0] && (
               <img
                 src={value.media[0]}

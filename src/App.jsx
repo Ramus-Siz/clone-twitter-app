@@ -16,6 +16,9 @@ import More from "./pages/more";
 import Notifications from "./pages/notifications";
 import Profile from "./pages/profile";
 import jsondatas from "./utils/initial-data.json";
+import Login from "./pages/login/Login";
+import Update from "./pages/profile/Update";
+import UpdateForm from "./pages/profile/UpdateForm";
 
 export default function App() {
   let currentUser = jsondatas.currentUser;
@@ -38,6 +41,9 @@ export default function App() {
       <TweetsProvider>
         <BrowserRouter>
           <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/updateForm" element={<Update />} />
+
             <Route path="/" element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />

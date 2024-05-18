@@ -1,9 +1,7 @@
 import axios from "axios";
 
 const getData = async () => {
-  const { data } = await axios.get(
-    `https://rafiki-twitter.onrender.com/api/tweets`
-  );
+  const { data } = await axios.get(`http://localhost:8002/api/tweets`);
   const tweets = data.reverse();
   return tweets;
 };

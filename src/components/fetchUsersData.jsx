@@ -1,9 +1,8 @@
 import axios from "axios";
 
 const getUserData = async () => {
-  const { data } = await axios.get(
-    `https://rafiki-twitter.onrender.com/api/users/8`
-  );
+  const { data } = await axios.get(`http://localhost:8002/api/users/8`);
+  console.log(data);
   return data;
 };
 

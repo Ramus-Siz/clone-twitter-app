@@ -8,7 +8,7 @@ import { UserContext, tweetContext } from "../contexts";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import InfiniteScroll from "react-infinite-scroll-component";
-import FechTweetsData from "../components/fetchData";
+// import FechTweetsData from "../components/fetchData";
 import { GenerateCreatedDataAndHour } from "../utils/formatedDate";
 
 function Home({ title }) {
