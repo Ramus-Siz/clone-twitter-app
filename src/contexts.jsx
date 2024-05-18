@@ -1,11 +1,14 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import FechUsersData from "./components/fetchUsersData";
-import FechTweetsData from "./components/fetchData";
+// import FechUsersData from "./components/fetchUsersData";
+// import FechTweetsData from "./components/fetchData";
+import { get } from "react-hook-form";
 export const tweetContext = createContext([]);
 export const UserContext = createContext({});
 
 export function TweetsProvider({ children }) {
-  const [tweetsData, setTweetsData] = useState(FechTweetsData());
+  const getTweets = sessionStorage.getItem("tweets");
+  const tweets = JSON.parse(getTweets);
+  const [tweetsData, setTweetsData] = useState(tweets);
 
   const [theNweTweet, setTheNweTweet] = useState(tweetsData);
 
@@ -23,9 +26,9 @@ export function TweetsProvider({ children }) {
 }
 
 export function UsersProvider({ children }) {
-  const getCurretUser = sessionStorage.getItem("currentUser");
-  const currentUser = JSON.parse(getCurretUser);
-  const [usersData, setUsersData] = useState(currentUser);
+  const getUserWithInfos = sessionStorage.getItem("userWithInfos");
+  const userWithInfos = JSON.parse(getUserWithInfos);
+  const [usersData, setUsersData] = useState(userWithInfos);
 
   const [theNewUser, setTheNwewUser] = useState(usersData);
 
