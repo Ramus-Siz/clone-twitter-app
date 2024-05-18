@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import InfiniteScroll from "react-infinite-scroll-component";
 // import FechTweetsData from "../components/fetchData";
 import { GenerateCreatedDataAndHour } from "../utils/formatedDate";
+import { BASE_API_URL } from "../utils/baseUrl.config";
 
 function Home({ title }) {
   const [dataForInfiniteScroll, setDataForInfiniteScroll] = useState(
@@ -36,7 +37,7 @@ function Home({ title }) {
   async function handleClickButtonTweet(dataTweet) {
     try {
       const response = await axios.post(
-        "https://rafiki-twitter.onrender.com/api/tweets/add",
+        `${BASE_API_URL}/api/tweets/add`,
         dataTweet
       );
     } catch (error) {

@@ -6,7 +6,6 @@ export const UserContext = createContext({});
 
 export function TweetsProvider({ children }) {
   const [tweetsData, setTweetsData] = useState(FechTweetsData());
-  const [usersData, setusersData] = useState(FechUsersData());
 
   const [theNweTweet, setTheNweTweet] = useState(tweetsData);
 
@@ -24,7 +23,9 @@ export function TweetsProvider({ children }) {
 }
 
 export function UsersProvider({ children }) {
-  const [usersData, setUsersData] = useState(FechUsersData());
+  const getCurretUser = sessionStorage.getItem("currentUser");
+  const currentUser = JSON.parse(getCurretUser);
+  const [usersData, setUsersData] = useState(currentUser);
 
   const [theNewUser, setTheNwewUser] = useState(usersData);
 

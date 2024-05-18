@@ -5,19 +5,28 @@ import { useContext, useEffect, useState } from "react";
 // import FechUsersData from "./fetchUsersData";
 import axios from "axios";
 import { FormatDate } from "../utils/formatedDate";
+import { BASE_API_URL } from "../utils/baseUrl.config";
 
 export default function SingleTweet({ value }) {
+  console.log(value);
   const [users, setUsers] = useState({});
-  const userUrl = `https://rafiki-twitter.onrender.com/api/users/${value.author}`;
+
+  const userUrl = `${BASE_API_URL}/api/users/${value.userId}`;
   console.log("users: ", users);
+  const getUserData = async () => {
+    try {
+      const response = await axios.get(userUrl);
+      if (response.status === 201) {
+        setUsers(response.data);
+      }
+    } catch (error) {
+      console.log("singleTweet: ", error);
+    }
+  };
 
   useEffect(() => {
-    const getUserData = async () => {
-      const { data } = await axios.get(userUrl);
-      setUsers(data);
-    };
     getUserData();
-  }, []);
+  }, [value]);
   return (
     <div
       className=" flex justify-start items-start gap-4 px-6 py-6 border-b-1-[#2f3336]"

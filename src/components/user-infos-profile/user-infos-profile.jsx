@@ -5,11 +5,12 @@ import { useContext, useEffect, useState } from "react";
 import { tweetContext, UserContext } from "../../contexts";
 import SingleUserTweets from "../single-user-tweets";
 import axios from "axios";
+import { BASE_API_URL } from "../../utils/baseUrl.config";
 
 function UserInfosProfile() {
   const { handle } = useParams();
   const [users, setUsers] = useState({});
-  const userUrl = `http://localhost:8002/api/users/handle/${handle}`;
+  const userUrl = `${BASE_API_URL}/api/users/handle/${handle}`;
 
   const bg = users.profileBackground;
   console.log(users);

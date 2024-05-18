@@ -24,7 +24,8 @@ export default function SignupForm() {
       );
       if (response.status === 201) {
         console.log("Bien enrregistré");
-        navigation("/updateForm");
+        window.location.reload();
+        navigation("/");
       }
     } catch (error) {
       console.log("Signup: ", error);
@@ -44,46 +45,42 @@ export default function SignupForm() {
           type="email"
           placeholder="exemple@domain.com"
           label="Email address"
-          register={register("email", {
+          {...register("email", {
             required: "Please fill a valid email",
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: "Please fill a valid email",
-            },
           })}
-          error={errors.email?.message}
+          error={errors.email && "Please fill a valid email"}
         />
         <InputForm
           type="text"
           placeholder="Username"
           label="Username"
-          register={register("username", {
+          {...register("username", {
             required: "Username must be unique",
           })}
-          error={errors.username?.message}
+          error={errors.username && "Username must be unique"}
         />
         <InputForm
           type="password"
           placeholder="Password"
           label="Password"
-          register={register("password", {
+          {...register("password", {
             required: "At least 8 characters",
             minLength: {
               value: 8,
               message: "At least 8 characters",
             },
           })}
-          error={errors.password?.message}
+          error={errors.password && "At least 8 characters"}
         />
         <InputForm
           type="password"
           placeholder="Password again"
           label="Password again"
-          register={register("passwordAgain", {
+          {...register("passwordAgain", {
             required: "Passwords must match",
             validate: (value) => value === password || "Passwords must match",
           })}
-          error={errors.passwordAgain?.message}
+          error={errors.passwordAgain && "Passwords must match"}
         />
       </div>
       <button

@@ -1,7 +1,8 @@
 import axios from "axios";
+import { BASE_API_URL } from "../utils/baseUrl.config";
 
 const getData = async () => {
-  const { data } = await axios.get(`http://localhost:8002/api/tweets`);
+  const { data } = await axios.get(`${BASE_API_URL}/api/tweets`);
   const tweets = data.reverse();
   return tweets;
 };

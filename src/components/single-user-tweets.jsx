@@ -6,7 +6,7 @@ export default function SingleUserTweets({ userAccout }) {
   const { tweets } = useContext(tweetContext);
 
   // filter the context containing the array of tweet objects
-  const tweetFilter = tweets.filter((user) => user.author == userAccout.id);
+  const tweetFilter = tweets.filter((user) => user.userId == userAccout.id);
   console.log(tweetFilter);
   return (
     <div className="tweets">

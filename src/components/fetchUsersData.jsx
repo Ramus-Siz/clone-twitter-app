@@ -1,7 +1,8 @@
 import axios from "axios";
+import { BASE_API_URL } from "../utils/baseUrl.config";
 
 const getUserData = async () => {
-  const { data } = await axios.get(`http://localhost:8002/api/users/8`);
+  const { data } = await axios.get(`${BASE_API_URL}/api/users/8`);
   console.log(data);
   return data;
 };
