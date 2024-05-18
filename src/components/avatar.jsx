@@ -4,8 +4,10 @@ import { UserContext } from "../contexts";
 
 export default function Avatar({ avatarImg, name }) {
   const user = useContext(UserContext);
+  const getUser = sessionStorage.getItem("userWithInfos");
+  const userWithInfos = JSON.parse(getUser);
   return (
-    <Link to={`/profile/${user.users.handle}`}>
+    <Link to={`/profile/${userWithInfos.handle}`}>
       {avatarImg != "" ? (
         <img src={avatarImg} alt="" className="userProfileImage" />
       ) : (

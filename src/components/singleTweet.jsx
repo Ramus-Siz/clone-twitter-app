@@ -8,11 +8,11 @@ import { FormatDate } from "../utils/formatedDate";
 import { BASE_API_URL } from "../utils/baseUrl.config";
 
 export default function SingleTweet({ value }) {
-  console.log(value);
+  // console.log(value);
   const [users, setUsers] = useState({});
 
   const userUrl = `${BASE_API_URL}/api/users/${value.userId}`;
-  console.log("users: ", users);
+  // console.log("users: ", users);
   const getUserData = async () => {
     try {
       const response = await axios.get(userUrl);

@@ -37,6 +37,10 @@ function UserInfosProfile() {
       <div className="flex items-center gap-8 pt-4 pl-8 pr-8 pb-4">
         <UserNameProfile username={users.handle} user={users.name} />
         <Update userHandle={handle} />
+        <div className="flex items-center gap-4">
+          <p>Bio:</p>
+          <p>{users.bio}</p>
+        </div>
       </div>
       <SingleUserTweets userAccout={users} />
     </>

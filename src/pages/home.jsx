@@ -9,8 +9,8 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import InfiniteScroll from "react-infinite-scroll-component";
 // import FechTweetsData from "../components/fetchData";
-import { GenerateCreatedDataAndHour } from "../utils/formatedDate";
 import { BASE_API_URL } from "../utils/baseUrl.config";
+import { getFormattedDate } from "../utils/formatedDate";
 
 function Home({ title }) {
   const [dataForInfiniteScroll, setDataForInfiniteScroll] = useState(
@@ -45,7 +45,7 @@ function Home({ title }) {
       );
 
       if (response.status === 200) {
-        setTweetToinsert([...tweetsSesion, dataTweet]);
+        setTweetToinsert([dataTweet, ...tweetsSesion]);
         const myTweets = sessionStorage.getItem("tweets");
         const tweetsArray = JSON.parse(myTweets) || [];
         tweetsArray.push(response.data.aadTweet);
@@ -64,13 +64,13 @@ function Home({ title }) {
 
     let newTweetToadd = {
       id: keyOfTweet,
-      author: userWithInfos.id,
+      userId: userWithInfos.id,
       media: [],
       retweetCount: 0,
       favoriteCount: 0,
       repliesCount: 0,
       text: twetinputData,
-      createdAt: GenerateCreatedDataAndHour(),
+      createdAt: getFormattedDate(),
     };
 
     return newTweetToadd;

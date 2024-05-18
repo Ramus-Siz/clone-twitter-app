@@ -10,7 +10,7 @@ export default function Update() {
         onClick={() => {
           setModalOpen(true);
         }}
-        className="bg-[#1d9bf0] w-56 px-4 py-4 mt-3 flex gap-4 justify-center items-center rounded-full font-bold text-white"
+        className="bg-[#1d9bf0] w-56 px-2 py-2 mt-3 flex gap-4 justify-center items-center rounded-full font-bold text-white"
       >
         Edit profile
       </button>
