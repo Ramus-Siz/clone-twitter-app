@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 function Navigation() {
+  const getUserWithInfos = sessionStorage.getItem("userWithInfos");
+  const userWithInfos = JSON.parse(getUserWithInfos);
   return (
     <nav className="hashtag ">
       <NavLink>
@@ -68,7 +70,7 @@ function Navigation() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/profile/@Bradley...">
+          <NavLink to={`/profile/${userWithInfos.handle}`}>
             <div className="inline-navigate-sidebar">
               <img src="src\images\Icons\Profile.png" alt="" />
               <h3>Profile</h3>

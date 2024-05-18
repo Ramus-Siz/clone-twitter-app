@@ -6,7 +6,13 @@ export default function Avatar({ avatarImg, name }) {
   const user = useContext(UserContext);
   return (
     <Link to={`/profile/${user.users.handle}`}>
-      <img src={avatarImg} alt="" className="userProfileImage" />
+      {avatarImg != "" ? (
+        <img src={avatarImg} alt="" className="userProfileImage" />
+      ) : (
+        <span className="text-6xl flex items-center justify-center">
+          <ion-icon name="person-circle-outline"></ion-icon>
+        </span>
+      )}
     </Link>
   );
 }
