@@ -5,7 +5,7 @@ export default function Update() {
   const [modalOpen, setModalOpen] = React.useState(false);
 
   return (
-    <main className="flex h-screen justify-center items-center">
+    <main className="flex justify-center items-center">
       <button
         onClick={() => {
           setModalOpen(true);

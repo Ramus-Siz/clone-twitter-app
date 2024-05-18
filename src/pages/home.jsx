@@ -19,6 +19,8 @@ function Home({ title }) {
   const [hasMore, setHasMore] = useState(true);
   const { tweets, setTweetToinsert } = useContext(tweetContext);
   let currentUser = useContext(UserContext);
+  const getTweets = sessionStorage.getItem("tweets");
+  const tweetsSesion = JSON.parse(getTweets);
   const inputRef = useRef(null); // to clear the tweet input
   const {
     reset,
@@ -26,7 +28,8 @@ function Home({ title }) {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  const getUserWithInfos = sessionStorage.getItem("userWithInfos");
+  const userWithInfos = JSON.parse(getUserWithInfos);
   const onSubmit = (data) => {
     console.log(data.newTweet);
     let dataTweet = setNewTweetsInfos(data.newTweet);
@@ -40,12 +43,19 @@ function Home({ title }) {
         `${BASE_API_URL}/api/tweets/add`,
         dataTweet
       );
+
+      if (response.status === 200) {
+        setTweetToinsert([...tweetsSesion, dataTweet]);
+        const myTweets = sessionStorage.getItem("tweets");
+        const tweetsArray = JSON.parse(myTweets) || [];
+        tweetsArray.push(response.data.aadTweet);
+        sessionStorage.setItem("tweets", JSON.stringify(tweetsArray));
+        console.log("the tweets: ", tweets);
+        reset();
+      }
     } catch (error) {
       console.log(error);
     }
-    reset();
-    setTweetToinsert([...tweets, dataTweet]);
-    console.log("the tweets: ", tweets);
   }
 
   function setNewTweetsInfos(twetinputData) {
@@ -54,7 +64,7 @@ function Home({ title }) {
 
     let newTweetToadd = {
       id: keyOfTweet,
-      author: 8,
+      author: userWithInfos.id,
       media: [],
       retweetCount: 0,
       favoriteCount: 0,

@@ -6,6 +6,7 @@ import { tweetContext, UserContext } from "../../contexts";
 import SingleUserTweets from "../single-user-tweets";
 import axios from "axios";
 import { BASE_API_URL } from "../../utils/baseUrl.config";
+import Update from "../../pages/profile/Update";
 
 function UserInfosProfile() {
   const { handle } = useParams();
@@ -33,8 +34,9 @@ function UserInfosProfile() {
           <Avatar avatarImg={users.profilePicture} />
         </div>
       </div>
-      <div className="user-name-profile">
+      <div className="flex items-center gap-8 pt-4 pl-8 pr-8 pb-4">
         <UserNameProfile username={users.handle} user={users.name} />
+        <Update userHandle={handle} />
       </div>
       <SingleUserTweets userAccout={users} />
     </>

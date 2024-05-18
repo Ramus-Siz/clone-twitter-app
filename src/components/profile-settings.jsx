@@ -6,16 +6,20 @@ import { useState } from "react";
 
 function ProfileSettings() {
   const user = useContext(UserContext);
+  const getUser = sessionStorage.getItem("userWithInfos");
+  const userWithInfos = JSON.parse(getUser);
   console.log("Object: ", user);
-  console.log("Nom: ", user.users.name);
 
   return (
     <>
       <div className="profile-settings">
         <div className="avatar-profile-photo mr-[8px]">
-          <TweetAvatar avatarImg={user.users.profilePicture} />
+          <TweetAvatar avatarImg={userWithInfos.profilePicture} />
         </div>
-        <UserNameProfile user={user.users.name} username={user.users.handle} />
+        <UserNameProfile
+          user={userWithInfos.name}
+          username={userWithInfos.handle}
+        />
         <img
           src="src\images\Icons\More-2.png"
           alt=""
