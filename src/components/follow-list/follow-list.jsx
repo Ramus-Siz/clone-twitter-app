@@ -5,7 +5,7 @@ import { UserContext, tweetContext } from "../../contexts";
 
 function FollowList() {
   const currentUser = useContext(UserContext);
-  console.log(currentUser.users);
+  console.log(currentUser);
 
   // let toFollow = currentUser.filter(
   //   (account) => account.handle !== "@daRiddla"
@@ -15,7 +15,7 @@ function FollowList() {
   return (
     <>
       <div className="follow-list">
-        <AccountToFollow value={currentUser.users} />
+        <AccountToFollow value={currentUser} />
 
         <ShowMore />
       </div>
