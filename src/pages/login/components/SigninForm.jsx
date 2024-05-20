@@ -21,7 +21,7 @@ export default function SigninForm() {
         data
       );
       if (response.status === 200) {
-        console.log(response.data);
+        console.log(response.data.user);
 
         console.log("You are login");
         sessionStorage.setItem(
