@@ -20,20 +20,26 @@ export default function SigninForm() {
         `${BASE_API_URL}/api/auth/signin`,
         data
       );
+      if (response.status === 200) {
+        console.log(response.data);
 
-      console.log("You are login");
-      sessionStorage.setItem(
-        "currentUser",
-        JSON.stringify(response.data.currentUser)
-      );
-      sessionStorage.setItem("session", JSON.stringify(response.data.session));
-      sessionStorage.setItem("tweets", JSON.stringify(response.data.tweets));
-      sessionStorage.setItem(
-        "userWithInfos",
-        JSON.stringify(response.data.user)
-      );
+        console.log("You are login");
+        sessionStorage.setItem(
+          "currentUser",
+          JSON.stringify(response.data.currentUser)
+        );
+        sessionStorage.setItem(
+          "session",
+          JSON.stringify(response.data.session)
+        );
+        sessionStorage.setItem("tweets", JSON.stringify(response.data.tweets));
+        sessionStorage.setItem(
+          "userWithInfos",
+          JSON.stringify(response.data.user)
+        );
 
-      navigation("/home");
+        navigation("/home");
+      }
     } catch (error) {
       console.log("Signin : ", error);
     }
