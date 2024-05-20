@@ -1,15 +1,15 @@
-export function IncerementeOrDecrementeLikes(value) {
-  if (value.isLiked == false) {
-    // value.reactions = IncrementFormateLikes(value.reactions);
-    value.reactions = value.reactions + 1;
-    value.isLiked = true;
-  } else {
-    // value.reactions = DecrementFormateLikes(value.reactions);
-    value.reactions = value.reactions - 1;
-    value.isLiked = false;
-  }
-  return value.reactions;
-}
+// export function IncerementeOrDecrementeLikes(value) {
+//   if (value.isLiked == false) {
+//     // value.reactions = IncrementFormateLikes(value.reactions);
+//     value.reactions = value.reactions + 1;
+//     value.isLiked = true;
+//   } else {
+//     // value.reactions = DecrementFormateLikes(value.reactions);
+//     value.reactions = value.reactions - 1;
+//     value.isLiked = false;
+//   }
+//   return value.reactions;
+// }
 // let numPart;
 // let numberPart;
 // let likeStat;

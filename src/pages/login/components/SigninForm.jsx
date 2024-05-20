@@ -35,7 +35,7 @@ export default function SigninForm() {
         sessionStorage.setItem("tweets", JSON.stringify(response.data.tweets));
         sessionStorage.setItem(
           "userWithInfos",
-          JSON.stringify(response.data.user)
+          JSON.stringify(response.data.userWithInfos)
         );
 
         navigation("/home");

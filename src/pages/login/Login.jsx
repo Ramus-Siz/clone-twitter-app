@@ -29,11 +29,7 @@ export default function Login() {
     <main className=" h-screen flex flex-col">
       <div className="mx-8 my-5 md:mx-28 md:my-5 lg:m-0 flex flex-col lg:flex lg:flex-row lg:h-full lg:justify-center lg:items-center">
         <div className="lg:flex lg:justify-center lg:items-center lg:h-full lg:w-7/12">
-          <img
-            src="public/x_logo.png"
-            alt="Logo x.com"
-            className="h-14 lg:h-96"
-          />
+          <img src="/x_logo.png" alt="Logo x.com" className="h-14 lg:h-96" />
         </div>
 
         <div className="lg:flex lg:flex-col lg:justify-center lg:items-start lg:h-full lg:w-5/12 ">

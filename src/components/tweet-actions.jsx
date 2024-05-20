@@ -1,8 +1,5 @@
 import { useState } from "react";
-import {
-  IncerementeOrDecrementeLikes,
-  formatLikes,
-} from "../utils/actions-buttons-functions";
+import { formatLikes } from "../utils/actions-buttons-functions";
 export default function TweetActions({ value }) {
   // const [action, setActions] = useState(formatLikes(value.favoriteCount));
   const [favoriteCount, setFavoriteCount] = useState(value.favoriteCount);
