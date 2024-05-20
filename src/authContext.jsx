@@ -24,6 +24,10 @@ export const AuthProvider = ({ children }) => {
 
         sessionStorage.setItem(
           "userWithInfos",
+          JSON.stringify(response.data.userWithInfos)
+        );
+        sessionStorage.setItem(
+          "session",
           JSON.stringify(response.data.session)
         );
         return true;
