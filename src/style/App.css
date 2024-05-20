@@ -202,6 +202,10 @@ body {
   gap: 20px;
 }
 
+.input-login {
+  color: #181818;
+}
+
 .reactions:hover {
   color: #f91880;
   fill: #f91880;

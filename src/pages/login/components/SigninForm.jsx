@@ -80,7 +80,7 @@ export default function SigninForm() {
         className="h-full md:h-[500px] flex flex-col justify-between "
       >
         <h2 className="font-bold text-3xl">Login to your account</h2>
-        <div className="flex flex-col items-end gap-4 mt-4 ">
+        <div className="flex flex-col items-end gap-4 mt-4">
           <InputForm
             type="email"
             placeholder="exemple@domain.com"

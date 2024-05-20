@@ -35,7 +35,7 @@ export default function Modal({ setOpenModal, usedFor }) {
             </svg>
           </button>
           <div className="lg:flex lg:justify-center lg:items-center lg:h-full ">
-            <img src="/x_favicon.png" alt="Logo x.com" className="h-12" />
+            <img src="public/x_favicon.png" alt="Logo x.com" className="h-12" />
           </div>
           {usedFor == "update" && (
             <button
