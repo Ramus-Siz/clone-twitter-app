@@ -4,6 +4,9 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { get } from "react-hook-form";
 export const tweetContext = createContext([]);
 export const UserContext = createContext({});
+import React from "react";
+import { Route, Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "./authContext";
 
 export function TweetsProvider({ children }) {
   const getTweets = sessionStorage.getItem("tweets");

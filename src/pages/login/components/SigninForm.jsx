@@ -4,8 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { BASE_API_URL } from "../../../utils/baseUrl.config";
+import { useAuth } from "../../../authContext";
 
 export default function SigninForm() {
+  const { signin } = useAuth();
   const {
     register,
     handleSubmit,
@@ -15,33 +17,11 @@ export default function SigninForm() {
 
   const onSubmit = async (data) => {
     console.log(data);
-    try {
-      const response = await axios.post(
-        `${BASE_API_URL}/api/auth/signin`,
-        data
-      );
-      if (response.status === 200) {
-        console.log(response.data.user);
-
-        console.log("You are login");
-        sessionStorage.setItem(
-          "currentUser",
-          JSON.stringify(response.data.currentUser)
-        );
-        sessionStorage.setItem(
-          "session",
-          JSON.stringify(response.data.session)
-        );
-        sessionStorage.setItem("tweets", JSON.stringify(response.data.tweets));
-        sessionStorage.setItem(
-          "userWithInfos",
-          JSON.stringify(response.data.userWithInfos)
-        );
-
-        navigation("/home");
-      }
-    } catch (error) {
-      console.log("Signin : ", error);
+    const success = await signin(data);
+    if (success) {
+      navigation("/home");
+    } else {
+      console.log("Signin failed");
     }
   };
   return (
