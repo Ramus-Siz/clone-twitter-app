@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import InputForm from "./formComponents/InputForm";
 import axios from "axios";
 import { BASE_API_URL } from "../../../utils/baseUrl.config";
+import { useAuth } from "../../../authContext";
 
 export default function SignupForm() {
   const {
@@ -13,6 +14,7 @@ export default function SignupForm() {
     watch,
   } = useForm();
   const navigation = useNavigate();
+  const { signin, loading } = useAuth();
 
   const onSubmit = async (data) => {
     console.log(data);

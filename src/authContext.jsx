@@ -6,9 +6,10 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const signin = async (data) => {
+    setLoading(true);
     try {
       const response = await axios.post(
         `${BASE_API_URL}/api/auth/signin`,
@@ -30,6 +31,7 @@ export const AuthProvider = ({ children }) => {
           "session",
           JSON.stringify(response.data.session)
         );
+        setLoading(false);
         return true;
       }
     } catch (error) {

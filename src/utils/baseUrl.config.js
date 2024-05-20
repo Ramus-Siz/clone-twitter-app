@@ -1,1 +1,1 @@
-export const BASE_API_URL = "https://rafiki-twitter.onrender.com";
+export const BASE_API_URL = "http://localhost:8002";
