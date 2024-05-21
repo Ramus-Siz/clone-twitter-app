@@ -16,7 +16,6 @@ export default function SigninForm() {
   const navigation = useNavigate();
 
   const onSubmit = async (data) => {
-    console.log(data);
     const success = await signin(data);
     if (success) {
       navigation("/home");

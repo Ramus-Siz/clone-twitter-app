@@ -15,7 +15,6 @@ export function TweetsProvider({ children }) {
 
   const [theNweTweet, setTheNweTweet] = useState(tweetsData);
 
-  console.log(theNweTweet);
   //update the tweetContext
   function setTweetToinsert(newTwets) {
     setTweetsData(newTwets);
@@ -35,7 +34,6 @@ export function UsersProvider({ children }) {
 
   const [theNewUser, setTheNwewUser] = useState(usersData);
 
-  console.log(theNewUser);
   //update the tweetContext
   function setUsersToinsert(newUser) {
     setUsersData(newUser);

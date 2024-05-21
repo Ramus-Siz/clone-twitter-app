@@ -11,7 +11,6 @@ export default function Tweets() {
     reversedTweetsSession = tweetsSession.reverse();
   }
   const { tweets } = useContext(tweetContext);
-  console.log(reversedTweetsSession);
 
   return (
     <div className="tweets">
